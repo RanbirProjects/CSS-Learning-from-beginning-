@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    /* 1. Horizontal & Vertical shadow */
+    .shadow-basic {
+      text-shadow: 2px 2px;
+    }
+
+    /* 2. Shadow with color */
+    .shadow-color {
+      text-shadow: 2px 2px red;
+    }
+
+    /* 3. Shadow with color & blur */
+    .shadow-blur {
+      text-shadow: 2px 2px 5px red;
+    }
+
+    /* 4. White text with black shadow */
+    .shadow-white {
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    /* 5. Red neon glow */
+    .shadow-neon-red {
+      text-shadow: 0 0 5px red;
+    }
+
+    /* 6. Red + Blue neon glow */
+    .shadow-neon-rb {
+      text-shadow: 0 0 3px red, 0 0 6px blue;
+    }
+
+    /* 7. Black, Blue & Red glow */
+    .shadow-multi {
+      color: white;
+      text-shadow: 
+        1px 1px 2px black,
+        0 0 25px blue,
+        0 0 5px red;
+    }
+
+    h1 {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="shadow-basic">Basic Shadow</h1>
+  <h1 class="shadow-color">Shadow with Color</h1>
+  <h1 class="shadow-blur">Shadow with Blur</h1>
+  <h1 class="shadow-white">White Text Shadow</h1>
+  <h1 class="shadow-neon-red">Red Neon Glow</h1>
+  <h1 class="shadow-neon-rb">Red & Blue Glow</h1>
+  <h1 class="shadow-multi">Multi Shadow Glow</h1>
+
+</body>
+</html>

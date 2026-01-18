@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VectorShift Frontend Technical Assessment</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0f2fe;
+            overflow-x: hidden;
+        }
+
+        /* Full-screen Video Background */
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            opacity: 0.8;
+        }
+
+        /* Dark Overlay for Readability */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.85));
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            max-width: 320px;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6, #34d399, #22d3ee);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGradient 8s ease infinite, fadeInUp 1.5s ease;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #60a5fa;
+            border-bottom: 2px solid #60a5fa;
+            padding-bottom: 12px;
+            margin-top: 60px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+
+        p, li {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards;
+        }
+
+        code {
+            background: rgba(30, 58, 138, 0.6);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            color: #fde047;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #60a5fa44, #a78bfa44);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .example-img {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .example-img img {
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes textGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Video Background -->
+    <video autoplay muted loop playsinline id="background-video">
+        <source src="https://player.vimeo.com/external/426522709.hd.mp4?s=3b1e4d8a3e6d3e4d8a3e6d3e4d8a3e6d&profile_id=175" type="video/mp4">
+        <!-- Fallback to a great free abstract tech particles video from a reliable source -->
+        <!-- Alternative sources if needed: Check Pexels or Videvo for similar blue particle loops -->
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+        <header>
+            <img src="https://framerusercontent.com/images/fJaqQIXWP1utWOLKK0IHdiXuetI.png" alt="VectorShift Logo" class="logo">
+            <h1>Frontend Technical Assessment Instructions</h1>
+        </header>
+
+        <section>
+            <p>Thank you for taking the time to interview with us at <strong>VectorShift</strong>! As part of the interview process, we would like you to complete a frontend technical assessment.</p>
+            
+            <p>You can find all files necessary for the assignment in the <code>/frontend/src</code> and <code>/backend</code> folders. Feel free to make any changes to the provided files, including adding new files, deleting existing files, installing new packages, and modifying any provided code. Please use <span class="highlight">JavaScript/React</span> for the frontend and <span class="highlight">Python/FastAPI</span> for the backend.</p>
+
+            <p>The assessment consists of four parts, which are detailed below. You are encouraged to read all parts of the assessment before starting so that you can plan your approach.</p>
+
+            <p>To run the frontend: navigate to the <code>/frontend</code> directory and run (1) <code>npm i</code> and (2) <code>npm start</code>.<br>
+            To run the backend: navigate to the <code>/backend</code> directory and run <code>uvicorn main:app --reload</code>.</p>
+
+            <p>Feel free to reach out to <a href="mailto:recruiting@vectorshift.ai" style="color:#60a5fa; text-decoration: underline;">recruiting@vectorshift.ai</a> if you have any questions.</p>
+        </section>
+
+        <section>
+            <h2>Part 1: Node Abstraction</h2>
+            <p>In <code>/frontend/src</code>, you will find a folder called <code>nodes</code>. This folder contains JavaScript files for four types of nodes (inputs, outputs, LLMs, and text). Each of these nodes contains different text, content, and input/output connections (called “Handles”), but there is also a significant amount of shared code between nodes.</p>
+
+            <p>Your task is to create an abstraction for these nodes that speeds up your ability to create new nodes and apply styles across nodes in the future.</p>
+
+            <p>Once you have created your abstraction, make <strong>five new nodes</strong> of your choosing to demonstrate how it works.</p>
+
+            <div class="example-img">
+                <img src="https://reactflow.dev/_next/image?url=https%3A%2F%2Ff20vdoobtdxrjemr.public.blob.vercel-storage.com%2Fshowcases%2F17bf4645-2242-81e0-83d0-d7f1c0cde50d.png&w=3840&q=75" alt="Example of Node-Based Pipeline Builder">
+            </div>
+        </section>
+
+        <section>
+            <h2>Part 2: Styling</h2>
+            <p>The frontend files you receive do not apply any significant styling. Your task is to style the various components into an appealing, unified design. You can use VectorShift’s existing styles as inspiration or create your own from the ground up.</p>
+        </section>
+
+        <section>
+            <h2>Part 3: Text Node Logic</h2>
+            <p>The Text node has a field for text input. Improve it in two ways:</p>
+            <ul>
+                <li>The width and height of the Text node should dynamically change as the user types.</li>
+                <li>Allow variables like <code>{{ variable }}</code> – automatically create a new input Handle on the left for each unique variable.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Part 4: Backend Integration</h2>
+            <p>Connect the frontend to the provided FastAPI backend:</p>
+            <ul>
+                <li>Update <code>/frontend/src/submit.js</code> to POST nodes and edges to <code>/pipelines/parse</code>.</li>
+                <li>On the backend, return <code>{num_nodes, num_edges, is_dag}</code> (use NetworkX for DAG check).</li>
+                <li>Show a nice alert with the results when the response arrives.</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
