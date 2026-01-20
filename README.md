@@ -23,3 +23,59 @@ It is designed for:
 
 ## 📂 Folder Structure
 
+CSS/
+│
+├── css background/
+│ ├── css background property color.html
+│ ├── Opacity Transparency.html
+│
+├── font size/
+│ ├── CSS background-image.html
+│
+├── README.md
+└── .gitignore
+
+
+
+Each folder focuses on **one core CSS concept**, explained through working examples.
+
+---
+
+## 🧠 Topics Covered
+
+### 🟦 CSS Basics
+- CSS syntax
+- Inline, internal, and external CSS
+- Colors (named, HEX, RGB, RGBA)
+
+### 🖼 Background Styling
+- `background-color`
+- `background-image`
+- `background-repeat`
+- `background-position`
+- `background-size` (`cover` & `contain`)
+- Shorthand `background` property
+- Gradient overlays
+- Paper & texture backgrounds
+
+### 🌫 Opacity & Transparency
+- `opacity` property
+- `rgba()` colors
+- Best practices for text readability
+
+### 🔤 Typography
+- `font-size`
+- Relative units (`px`, `em`, `rem`)
+- Readable text layouts
+
+---
+
+## ✨ Example (Background Image)
+
+```css
+body {
+  background-image: url("image.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
