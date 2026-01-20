@@ -1,4 +1,8 @@
 # 🎨 CSS Learning – From Beginning to Advanced
+to add code in this folder right
+git add .
+git commit -m "your message"
+git push
 
 Welcome to **CSS Learning – From Beginning to Advanced** 🚀  
 This repository is a **structured, hands-on guide** to learning **CSS from scratch**, with real examples, clean code, and practical use cases.
@@ -74,8 +78,15 @@ Each folder focuses on **one core CSS concept**, explained through working examp
 
 ```css
 body {
+
+
+
   background-image: url("image.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+
+
+
+
