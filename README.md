@@ -12,6 +12,7 @@ It is designed for:
 - Freshers preparing for interviews
 - Frontend / MERN developers revising fundamentals
 - Anyone who learns best by **writing and experimenting with code**
+  
 
 ---
 
@@ -73,6 +74,52 @@ Each folder focuses on **one core CSS concept**, explained through working examp
 - Readable text layouts
 
 ---
+📅 Day 3 – CSS Background Images
+
+🗓 Date: 21-01-2026
+
+On Day 3, the focus was on CSS Background Images, covering all important properties used in real-world web design.
+
+✅ Topics Covered (Day 3)
+
+background-image
+
+background-repeat
+
+background-position
+
+background-size (cover, contain)
+
+Full-screen background images
+
+Centered background layouts
+
+Best practices for responsive backgrounds
+
+🧪 Example – Background Image (Day 3)
+body {
+  background-image: url("image.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+🎯 Learning Outcome (Day 3)
+
+After completing Day 3, you can:
+
+Add background images correctly
+
+Create full-screen hero sections
+
+Control image repetition & alignment
+
+Use cover and contain confidently
+
+Answer CSS background image interview questions
+
+
+
 
 ## ✨ Example (Background Image)
 
@@ -86,7 +133,10 @@ body {
   background-position: center;
   background-size: cover;
 }
+,,,,,
 
+
+s
 
 
 
